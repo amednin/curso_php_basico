@@ -65,3 +65,18 @@ En caso de tener un archivo con PHP puro, y decidimos no escribir el closing tag
 ```php
 <?php echo 'No escribimos el closing tag';
 ```
+
+...y funciona.
+
+## Comentarios
+
+```php
+// Comentario de una línea
+
+/*
+  Bloque de comentarios para
+  más de una líneas
+*/
+ 
+\# Línea de comentario estilo shell
+```
