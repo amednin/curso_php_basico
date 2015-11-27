@@ -78,3 +78,4 @@ LDAP, IMAP, SNMP, NNTP, POP3, HTTP, COM (en Windows), Sockets, cUrl
 $ php -m
 ```
 
+[Sintaxis en PHP](https://github.com/amednin/curso_php_basico/blob/master/clase_1/sintaxis.md "Sintaxis PHP")
