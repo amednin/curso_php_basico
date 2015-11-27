@@ -80,3 +80,5 @@ En caso de tener un archivo con PHP puro, y decidimos no escribir el closing tag
  
 \# Línea de comentario estilo shell
 ```
+
+[Ver Tipos de Datos](https://github.com/amednin/curso_php_basico/blob/master/clase_1/tipos_datos.md "Tipos de datos en PHP")
