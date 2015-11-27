@@ -60,7 +60,7 @@ o módulo de servidor), servidor web y un browser.
 - Aplicaciones de escritorio. Para usar interfaces gráficas: _PHP-GTK_.
 
 ```
-**PHP** no está límitado a generar simplemente contenido *HTML*, puede enviar imagenes, PDFs, archivos flash, cualquier tipo de texto.
+PHP no está límitado a generar simplemente contenido HTML, puede enviar imagenes, PDFs, archivos flash, cualquier tipo de texto.
 ```
 
 Una de las capacidades más fuertes de PHP, es el soporte a un rango grande de conexiones a bases de datos.
