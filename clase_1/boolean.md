@@ -50,3 +50,5 @@ Los siguientes dan como resultado de su evaluación, un valor igual a FALSE:
 - objetos SimpleXML creados con tags vacios
 
 Todos los demás valores, cuando se evaluan lógicamente, dan como resultado `TRUE`.
+
+[Ver integer en PHP](https://github.com/amednin/curso_php_basico/blob/master/clase_1/integer.md "integer PHP")
