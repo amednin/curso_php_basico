@@ -1,6 +1,6 @@
 <?php
 
-$link = mysql_connect('webpt.vagrant', 'vagrant', 'vagrant');
+$link = mysql_connect('localhost', 'root', '123');
 if (!$link) {
     die('No se pudo conectar: ' . mysql_error());
 }
