@@ -5,4 +5,4 @@ $mysqli = new mysqli("localhost", "root", "123", "inspeccion");
 
 $result = $mysqli->query("SELECT * FROM movilidad");
 $row = $result->fetch_assoc();
-var_dump($row);
+echo '<pre>'; print_r($row); '</pre>';
