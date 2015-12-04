@@ -10,3 +10,18 @@ tipos de resources.
 Una variable resource puede ser usado para abrir files, conexiones a bases de datos, canvas para imagenes...
 
 Es por esa razón que convertir algún otro dato a tipo resource, no tiene sentido.
+
+### Ejemplos
+
+```php
+<?php
+    $c = mysql_connect();
+    echo get_resource_type($c) . "\n";
+    
+    $fp = fopen("archivo", "w");
+    echo get_resource_type($fp) . "\n";
+    
+    $doc = new_xmldoc("1.0");
+    echo get_resource_type($doc->doc) . "\n";
+?>
+```
