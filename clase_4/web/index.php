@@ -14,6 +14,14 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../views',
 ));
 
+// YML reader
+$app->register(new DerAlex\Silex\YamlConfigServiceProvider(__DIR__ . '/settings.yml'));
+
+// Doctrine register
+$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
+    'db.options' => $app['config']['database']
+));
+
 $app['debug'] = true;
 
 $blogPosts = array(
