@@ -9,6 +9,11 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 $app = new Silex\Application();
 
+// Twig register
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => __DIR__.'/../views',
+));
+
 $app['debug'] = true;
 
 $blogPosts = array(
@@ -33,6 +38,11 @@ $app->get('/blog', function () use ($blogPosts) {
     }
 
     return $output;
+
+//    return $app['twig']->render('index.twig',
+//        array(
+//            'blogs' => $blogPosts
+//        ));
 });
 
 $app->run();
