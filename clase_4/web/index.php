@@ -3,6 +3,8 @@
 // web/index.php
 require_once __DIR__.'/../vendor/autoload.php';
 
+use Symfony\Component\HttpFoundation\Request;
+
 $app = new Silex\Application();
 
 // Twig register
@@ -40,6 +42,31 @@ $app->get('/blog', function () use ($app, $blogPosts) {
         array(
             'blogs' => $blogPosts
         ));
+});
+
+$app->get('/blog-form', function () use ($app) {
+    return $app['twig']->render('blog-form.twig');
+});
+
+$app->post('/blog-save', function (Request $request) use ($app) {
+    $autor = $request->get('autor');
+    $titulo = $request->get('titulo');
+    $body = $request->get('body');
+
+    $execQuery = $app['db']->insert('blog',
+    array(
+        'id' => NULL,
+        'date' => date('Y-m-d'),
+        'author' => $autor,
+        'title' => $titulo,
+        'body' => $body));
+
+    if (!$execQuery) {
+        $app->abort(503, 'No se pudo crear la nueva entrada!');
+    }
+
+    return $app->redirect('/blog');
+    
 });
 
 $app->run();

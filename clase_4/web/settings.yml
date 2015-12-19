@@ -2,6 +2,6 @@ database:
     driver: pdo_mysql
     host: localhost
     dbname: blogs_silex
-    user: root
-    password: 123
+    user: drupal
+    password: drupal
     charset: utf8
