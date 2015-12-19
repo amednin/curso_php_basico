@@ -4,6 +4,7 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
+use Blog\BlogMgr\Controllers\BlogIndexController;
 
 $app = new Silex\Application();
 
@@ -22,27 +23,8 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 
 $app['debug'] = true;
 
-$blogPosts = array(
-    1 => array(
-        'date'      => '2011-03-29',
-        'author'    => 'igorw',
-        'title'     => 'Usando Silex',
-        'body'      => 'Blog que habla sobre silex y sus bondades....',
-    ),2 => array(
-        'date'      => '2011-03-29',
-        'author'    => 'carlos',
-        'title'     => 'Usando Silex',
-        'body'      => 'Blog que habla sobre silex y sus bondades....',
-    ),
-);
+$app->mount("/blog", new BlogIndexController());
 
-$app->get('/blog', function () use ($app, $blogPosts) {
-
-    return $app['twig']->render('blogs.twig',
-        array(
-            'blogs' => $blogPosts
-        ));
-});
 
 $app->get('/blog-form', function () use ($app) {
     return $app['twig']->render('blog-form.twig');
